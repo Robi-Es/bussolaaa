@@ -1,0 +1,1401 @@
+{
+ "generatedAt": "2026-10-31T12:31:27+00:00",
+ "demo": true,
+ "weekStart": "2026-10-26",
+ "weekEnd": "2026-11-01",
+ "packages": [
+  {
+   "id": "bologna-napoli",
+   "city": "Napoli",
+   "geo": "40.85°N 14.27°E",
+   "nights": 3,
+   "depCity": "Bologna",
+   "region": "Emilia-Romagna",
+   "depPlace": "Bologna Centrale",
+   "from": "BLQ",
+   "to": "NAP",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "train": true,
+     "who": "Italo",
+     "url": "https://www.italotreno.it",
+     "eur": 79,
+     "estimate": true,
+     "t": "Treno alta velocità andata e ritorno Bologna Centrale – Napoli",
+     "cta": "Vai al sito di Italo"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino a Piazza Garibaldi, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Napoli&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 111,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Unico Campania, trasporti locali 3 giorni",
+     "who": "Unico Campania",
+     "url": "https://www.unicocampania.it",
+     "eur": 4,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 194,
+   "livePrice": false
+  },
+  {
+   "id": "roma-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Roma",
+   "region": "Lazio",
+   "depPlace": "Roma Fiumicino",
+   "from": "FCO",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 61,
+     "estimate": true,
+     "t": "Volo andata e ritorno Roma Fiumicino – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 198,
+   "livePrice": false
+  },
+  {
+   "id": "bologna-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Bologna",
+   "region": "Emilia-Romagna",
+   "depPlace": "Bologna Marconi",
+   "from": "BLQ",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 64,
+     "estimate": true,
+     "t": "Volo andata e ritorno Bologna Marconi – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 201,
+   "livePrice": false
+  },
+  {
+   "id": "bari-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Bari",
+   "region": "Puglia",
+   "depPlace": "Bari Palese",
+   "from": "BRI",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 66,
+     "estimate": true,
+     "t": "Volo andata e ritorno Bari Palese – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 203,
+   "livePrice": false
+  },
+  {
+   "id": "venezia-napoli",
+   "city": "Napoli",
+   "geo": "40.85°N 14.27°E",
+   "nights": 3,
+   "depCity": "Venezia",
+   "region": "Veneto",
+   "depPlace": "Venezia Santa Lucia",
+   "from": "VCE",
+   "to": "NAP",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "train": true,
+     "who": "Italo",
+     "url": "https://www.italotreno.it",
+     "eur": 89,
+     "estimate": true,
+     "t": "Treno alta velocità andata e ritorno Venezia Santa Lucia – Napoli",
+     "cta": "Vai al sito di Italo"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino a Piazza Garibaldi, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Napoli&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 111,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Unico Campania, trasporti locali 3 giorni",
+     "who": "Unico Campania",
+     "url": "https://www.unicocampania.it",
+     "eur": 4,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 204,
+   "livePrice": false
+  },
+  {
+   "id": "milano-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Milano",
+   "region": "Lombardia",
+   "depPlace": "Milano Malpensa",
+   "from": "MXP",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 68,
+     "estimate": true,
+     "t": "Volo andata e ritorno Milano Malpensa – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 205,
+   "livePrice": false
+  },
+  {
+   "id": "cagliari-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Cagliari",
+   "region": "Sardegna",
+   "depPlace": "Cagliari Elmas",
+   "from": "CAG",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 70,
+     "estimate": true,
+     "t": "Volo andata e ritorno Cagliari Elmas – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 207,
+   "livePrice": false
+  },
+  {
+   "id": "napoli-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Napoli",
+   "region": "Campania",
+   "depPlace": "Napoli Capodichino",
+   "from": "NAP",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 72,
+     "estimate": true,
+     "t": "Volo andata e ritorno Napoli Capodichino – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 209,
+   "livePrice": false
+  },
+  {
+   "id": "palermo-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Palermo",
+   "region": "Sicilia",
+   "depPlace": "Palermo Falcone Borsellino",
+   "from": "PMO",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 73,
+     "estimate": true,
+     "t": "Volo andata e ritorno Palermo Falcone Borsellino – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 210,
+   "livePrice": false
+  },
+  {
+   "id": "genova-napoli",
+   "city": "Napoli",
+   "geo": "40.85°N 14.27°E",
+   "nights": 3,
+   "depCity": "Genova",
+   "region": "Liguria",
+   "depPlace": "Genova Piazza Principe",
+   "from": "GOA",
+   "to": "NAP",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "train": true,
+     "who": "Italo",
+     "url": "https://www.italotreno.it",
+     "eur": 99,
+     "estimate": true,
+     "t": "Treno alta velocità andata e ritorno Genova Piazza Principe – Napoli",
+     "cta": "Vai al sito di Italo"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino a Piazza Garibaldi, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Napoli&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 111,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Unico Campania, trasporti locali 3 giorni",
+     "who": "Unico Campania",
+     "url": "https://www.unicocampania.it",
+     "eur": 4,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 214,
+   "livePrice": false
+  },
+  {
+   "id": "catania-budapest",
+   "city": "Budapest",
+   "geo": "47.50°N 19.04°E",
+   "nights": 3,
+   "depCity": "Catania",
+   "region": "Sicilia",
+   "depPlace": "Catania Fontanarossa",
+   "from": "CTA",
+   "to": "BUD",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 78,
+     "estimate": true,
+     "t": "Volo andata e ritorno Catania Fontanarossa – Budapest",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino al Danubio, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Budapest&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 105,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro con bus 100E",
+     "who": "BKK Budapest",
+     "url": "https://bkk.hu",
+     "eur": 3,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Budapest Card 48 ore",
+     "who": "Budapest Card",
+     "url": "https://www.budapestcard.com",
+     "eur": 29,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 215,
+   "livePrice": false
+  },
+  {
+   "id": "torino-napoli",
+   "city": "Napoli",
+   "geo": "40.85°N 14.27°E",
+   "nights": 3,
+   "depCity": "Torino",
+   "region": "Piemonte",
+   "depPlace": "Torino Porta Nuova",
+   "from": "TRN",
+   "to": "NAP",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "train": true,
+     "who": "Italo",
+     "url": "https://www.italotreno.it",
+     "eur": 109,
+     "estimate": true,
+     "t": "Treno alta velocità andata e ritorno Torino Porta Nuova – Napoli",
+     "cta": "Vai al sito di Italo"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino a Piazza Garibaldi, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Napoli&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 111,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Unico Campania, trasporti locali 3 giorni",
+     "who": "Unico Campania",
+     "url": "https://www.unicocampania.it",
+     "eur": 4,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 224,
+   "livePrice": false
+  },
+  {
+   "id": "roma-valencia",
+   "city": "Valencia",
+   "geo": "39.47°N 0.38°O",
+   "nights": 4,
+   "depCity": "Roma",
+   "region": "Lazio",
+   "depPlace": "Roma Fiumicino",
+   "from": "FCO",
+   "to": "VLC",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 79,
+     "estimate": true,
+     "t": "Volo andata e ritorno Roma Fiumicino – Valencia",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Appartamento in zona Ruzafa, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Valencia&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 132,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metrovalencia",
+     "url": "https://www.metrovalencia.es",
+     "eur": 5,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Carnet bus e metro, 10 corse",
+     "who": "EMT Valencia",
+     "url": "https://www.emtvalencia.es",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 225,
+   "livePrice": false
+  },
+  {
+   "id": "cagliari-valencia",
+   "city": "Valencia",
+   "geo": "39.47°N 0.38°O",
+   "nights": 4,
+   "depCity": "Cagliari",
+   "region": "Sardegna",
+   "depPlace": "Cagliari Elmas",
+   "from": "CAG",
+   "to": "VLC",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 82,
+     "estimate": true,
+     "t": "Volo andata e ritorno Cagliari Elmas – Valencia",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Appartamento in zona Ruzafa, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Valencia&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 132,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metrovalencia",
+     "url": "https://www.metrovalencia.es",
+     "eur": 5,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Carnet bus e metro, 10 corse",
+     "who": "EMT Valencia",
+     "url": "https://www.emtvalencia.es",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 228,
+   "livePrice": false
+  },
+  {
+   "id": "bologna-valencia",
+   "city": "Valencia",
+   "geo": "39.47°N 0.38°O",
+   "nights": 4,
+   "depCity": "Bologna",
+   "region": "Emilia-Romagna",
+   "depPlace": "Bologna Marconi",
+   "from": "BLQ",
+   "to": "VLC",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 85,
+     "estimate": true,
+     "t": "Volo andata e ritorno Bologna Marconi – Valencia",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Appartamento in zona Ruzafa, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Valencia&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 132,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metrovalencia",
+     "url": "https://www.metrovalencia.es",
+     "eur": 5,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Carnet bus e metro, 10 corse",
+     "who": "EMT Valencia",
+     "url": "https://www.emtvalencia.es",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 231,
+   "livePrice": false
+  },
+  {
+   "id": "milano-napoli",
+   "city": "Napoli",
+   "geo": "40.85°N 14.27°E",
+   "nights": 3,
+   "depCity": "Milano",
+   "region": "Lombardia",
+   "depPlace": "Milano Centrale",
+   "from": "MIL",
+   "to": "NAP",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "train": true,
+     "who": "Italo",
+     "url": "https://www.italotreno.it",
+     "eur": 118,
+     "estimate": true,
+     "t": "Treno alta velocità andata e ritorno Milano Centrale – Napoli",
+     "cta": "Vai al sito di Italo"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle vicino a Piazza Garibaldi, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Napoli&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 111,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Unico Campania, trasporti locali 3 giorni",
+     "who": "Unico Campania",
+     "url": "https://www.unicocampania.it",
+     "eur": 4,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 233,
+   "livePrice": false
+  },
+  {
+   "id": "genova-valencia",
+   "city": "Valencia",
+   "geo": "39.47°N 0.38°O",
+   "nights": 4,
+   "depCity": "Genova",
+   "region": "Liguria",
+   "depPlace": "Genova Cristoforo Colombo",
+   "from": "GOA",
+   "to": "VLC",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 87,
+     "estimate": true,
+     "t": "Volo andata e ritorno Genova Cristoforo Colombo – Valencia",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Appartamento in zona Ruzafa, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Valencia&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 132,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metrovalencia",
+     "url": "https://www.metrovalencia.es",
+     "eur": 5,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Carnet bus e metro, 10 corse",
+     "who": "EMT Valencia",
+     "url": "https://www.emtvalencia.es",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 233,
+   "livePrice": false
+  },
+  {
+   "id": "torino-valencia",
+   "city": "Valencia",
+   "geo": "39.47°N 0.38°O",
+   "nights": 4,
+   "depCity": "Torino",
+   "region": "Piemonte",
+   "depPlace": "Torino Caselle",
+   "from": "TRN",
+   "to": "VLC",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 94,
+     "estimate": true,
+     "t": "Volo andata e ritorno Torino Caselle – Valencia",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Appartamento in zona Ruzafa, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Valencia&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 132,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metrovalencia",
+     "url": "https://www.metrovalencia.es",
+     "eur": 5,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Carnet bus e metro, 10 corse",
+     "who": "EMT Valencia",
+     "url": "https://www.emtvalencia.es",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 240,
+   "livePrice": false
+  },
+  {
+   "id": "catania-atene",
+   "city": "Atene",
+   "geo": "37.94°N 23.94°E",
+   "nights": 4,
+   "depCity": "Catania",
+   "region": "Sicilia",
+   "depPlace": "Catania Fontanarossa",
+   "from": "CTA",
+   "to": "ATH",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 84,
+     "estimate": true,
+     "t": "Volo andata e ritorno Catania Fontanarossa – Atene",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle ai piedi dell'Acropoli, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Atene&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 156,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Biglietto trasporti urbani, 5 giorni",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 258,
+   "livePrice": false
+  },
+  {
+   "id": "bari-atene",
+   "city": "Atene",
+   "geo": "37.94°N 23.94°E",
+   "nights": 4,
+   "depCity": "Bari",
+   "region": "Puglia",
+   "depPlace": "Bari Palese",
+   "from": "BRI",
+   "to": "ATH",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 88,
+     "estimate": true,
+     "t": "Volo andata e ritorno Bari Palese – Atene",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle ai piedi dell'Acropoli, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Atene&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 156,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Biglietto trasporti urbani, 5 giorni",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 262,
+   "livePrice": false
+  },
+  {
+   "id": "roma-atene",
+   "city": "Atene",
+   "geo": "37.94°N 23.94°E",
+   "nights": 4,
+   "depCity": "Roma",
+   "region": "Lazio",
+   "depPlace": "Roma Fiumicino",
+   "from": "FCO",
+   "to": "ATH",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 92,
+     "estimate": true,
+     "t": "Volo andata e ritorno Roma Fiumicino – Atene",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle ai piedi dell'Acropoli, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Atene&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 156,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Biglietto trasporti urbani, 5 giorni",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 266,
+   "livePrice": false
+  },
+  {
+   "id": "pisa-lisbona",
+   "city": "Lisbona",
+   "geo": "38.72°N 9.14°O",
+   "nights": 4,
+   "depCity": "Pisa",
+   "region": "Toscana",
+   "depPlace": "Pisa Galilei",
+   "from": "PSA",
+   "to": "LIS",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 92,
+     "estimate": true,
+     "t": "Volo andata e ritorno Pisa Galilei – Lisbona",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle in zona centrale, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Lisbona&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 124,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metro de Lisboa",
+     "url": "https://www.metrolisboa.pt",
+     "eur": 4,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Lisboa Card 72 ore",
+     "who": "Lisboa Card",
+     "url": "https://www.lisboacard.org",
+     "eur": 46,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 266,
+   "livePrice": false
+  },
+  {
+   "id": "milano-lisbona",
+   "city": "Lisbona",
+   "geo": "38.72°N 9.14°O",
+   "nights": 4,
+   "depCity": "Milano",
+   "region": "Lombardia",
+   "depPlace": "Milano Malpensa",
+   "from": "MXP",
+   "to": "LIS",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 96,
+     "estimate": true,
+     "t": "Volo andata e ritorno Milano Malpensa – Lisbona",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle in zona centrale, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Lisbona&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 124,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metro de Lisboa",
+     "url": "https://www.metrolisboa.pt",
+     "eur": 4,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Lisboa Card 72 ore",
+     "who": "Lisboa Card",
+     "url": "https://www.lisboacard.org",
+     "eur": 46,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 270,
+   "livePrice": false
+  },
+  {
+   "id": "venezia-atene",
+   "city": "Atene",
+   "geo": "37.94°N 23.94°E",
+   "nights": 4,
+   "depCity": "Venezia",
+   "region": "Veneto",
+   "depPlace": "Venezia Marco Polo",
+   "from": "VCE",
+   "to": "ATH",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 99,
+     "estimate": true,
+     "t": "Volo andata e ritorno Venezia Marco Polo – Atene",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle ai piedi dell'Acropoli, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Atene&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 156,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Biglietto trasporti urbani, 5 giorni",
+     "who": "Athens Transport",
+     "url": "https://www.athenstransport.com",
+     "eur": 9,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 273,
+   "livePrice": false
+  },
+  {
+   "id": "palermo-lisbona",
+   "city": "Lisbona",
+   "geo": "38.72°N 9.14°O",
+   "nights": 4,
+   "depCity": "Palermo",
+   "region": "Sicilia",
+   "depPlace": "Palermo Falcone Borsellino",
+   "from": "PMO",
+   "to": "LIS",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 99,
+     "estimate": true,
+     "t": "Volo andata e ritorno Palermo Falcone Borsellino – Lisbona",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle in zona centrale, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Lisbona&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 124,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metro de Lisboa",
+     "url": "https://www.metrolisboa.pt",
+     "eur": 4,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Lisboa Card 72 ore",
+     "who": "Lisboa Card",
+     "url": "https://www.lisboacard.org",
+     "eur": 46,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 273,
+   "livePrice": false
+  },
+  {
+   "id": "napoli-lisbona",
+   "city": "Lisbona",
+   "geo": "38.72°N 9.14°O",
+   "nights": 4,
+   "depCity": "Napoli",
+   "region": "Campania",
+   "depPlace": "Napoli Capodichino",
+   "from": "NAP",
+   "to": "LIS",
+   "depart": "2026-11-13",
+   "ret": "2026-11-17",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 104,
+     "estimate": true,
+     "t": "Volo andata e ritorno Napoli Capodichino – Lisbona",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle in zona centrale, 4 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Lisbona&checkin=2026-11-13&checkout=2026-11-17&group_adults=2&no_rooms=1",
+     "eur": 124,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metro de Lisboa",
+     "url": "https://www.metrolisboa.pt",
+     "eur": 4,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Lisboa Card 72 ore",
+     "who": "Lisboa Card",
+     "url": "https://www.lisboacard.org",
+     "eur": 46,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 278,
+   "livePrice": false
+  },
+  {
+   "id": "pisa-copenaghen",
+   "city": "Copenaghen",
+   "geo": "55.68°N 12.57°E",
+   "nights": 3,
+   "depCity": "Pisa",
+   "region": "Toscana",
+   "depPlace": "Pisa Galilei",
+   "from": "PSA",
+   "to": "CPH",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 103,
+     "estimate": true,
+     "t": "Volo andata e ritorno Pisa Galilei – Copenaghen",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle nel centro, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Copenaghen&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 189,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metroselskabet",
+     "url": "https://intl.m.dk",
+     "eur": 4,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Copenhagen Card 72 ore",
+     "who": "Copenhagen Card",
+     "url": "https://copenhagencard.com",
+     "eur": 69,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 365,
+   "livePrice": false
+  },
+  {
+   "id": "milano-copenaghen",
+   "city": "Copenaghen",
+   "geo": "55.68°N 12.57°E",
+   "nights": 3,
+   "depCity": "Milano",
+   "region": "Lombardia",
+   "depPlace": "Milano Malpensa",
+   "from": "MXP",
+   "to": "CPH",
+   "depart": "2026-11-13",
+   "ret": "2026-11-16",
+   "parts": [
+    {
+     "k": "volo",
+     "who": "Aviasales",
+     "url": "https://www.aviasales.com",
+     "eur": 109,
+     "estimate": true,
+     "t": "Volo andata e ritorno Milano Malpensa – Copenaghen",
+     "cta": "Cerca il volo su Aviasales"
+    },
+    {
+     "k": "alloggio",
+     "t": "Hotel 3 stelle nel centro, 3 notti",
+     "who": "Booking.com",
+     "url": "https://www.booking.com/searchresults.html?ss=Copenaghen&checkin=2026-11-13&checkout=2026-11-16&group_adults=2&no_rooms=1",
+     "eur": 189,
+     "estimate": true,
+     "cta": "Cerca l'alloggio su Booking.com"
+    },
+    {
+     "t": "Aeroporto – centro in metro",
+     "who": "Metroselskabet",
+     "url": "https://intl.m.dk",
+     "eur": 4,
+     "k": "transfer",
+     "estimate": true
+    },
+    {
+     "t": "Copenhagen Card 72 ore",
+     "who": "Copenhagen Card",
+     "url": "https://copenhagencard.com",
+     "eur": 69,
+     "k": "spostamenti",
+     "estimate": true
+    }
+   ],
+   "total": 371,
+   "livePrice": false
+  }
+ ]
+}

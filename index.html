@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bussola</title>
+<meta name="description" content="Pacchetti viaggio della settimana con voli, alloggio e spostamenti, dalle principali città italiane. Prenoti direttamente sui siti ufficiali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: sticky header, hero with a "what's inside a package" ticket, boarding-pass cards in a 2-col grid, how it works, trust, reviews backed by shared db. */
+:root {
+  --bg: #F1F5F7;
+  --surface: #FFFFFF;
+  --surface-2: #E8EFF3;
+  --ink: #0D2433;
+  --muted: #4B6070;
+  --line: #D3DEE5;
+  --accent: #0B6E7F;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #D9EEF2;
+  --sun: #B96F0B;
+  --sun-soft: #FBEBD0;
+  --danger: #B3261E;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1822;
+    --surface: #10242F;
+    --surface-2: #163242;
+    --ink: #E8F0F4;
+    --muted: #9DB3C0;
+    --line: #234254;
+    --accent: #4FC3D6;
+    --accent-ink: #04212A;
+    --accent-soft: #123745;
+    --sun: #F0B04A;
+    --sun-soft: #3A2C12;
+    --danger: #FF8A80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A1822;
+  --surface: #10242F;
+  --surface-2: #163242;
+  --ink: #E8F0F4;
+  --muted: #9DB3C0;
+  --line: #234254;
+  --accent: #4FC3D6;
+  --accent-ink: #04212A;
+  --accent-soft: #123745;
+  --sun: #F0B04A;
+  --sun-soft: #3A2C12;
+  --danger: #FF8A80;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 30; background: var(--surface);
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.1; letter-spacing: -0.02em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.wrap {
+  max-width: 1120px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+
+/* header */
+.site-head {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.03em; }
+.brand .i { width: 30px; height: 30px; color: var(--accent); stroke-width: 1.6; }
+.nav { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.nav a { text-decoration: none; font-weight: 500; font-size: 15px; padding: 8px 12px; border-radius: 8px; color: var(--muted); }
+.nav a:hover { color: var(--ink); background: var(--surface-2); }
+@media (max-width: 560px) { .nav a:first-child { display: none; } }
+
+/* hero */
+.hero { background: var(--surface); border-bottom: 1px solid var(--line); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 48px; align-items: center; padding-block: 56px 60px; }
+.hero h1 { font-size: clamp(2.2rem, 5.4vw, 3.9rem); font-weight: 800; margin-block: 14px 18px; }
+.hero .lede { font-size: 1.125rem; color: var(--muted); max-width: 54ch; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;
+  font: 700 15px/1 var(--font-body); padding: 14px 20px; border-radius: 10px; border: 1.5px solid transparent;
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+.btn-ghost:hover { background: var(--surface-2); }
+.btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+.assure { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 28px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 14px; }
+.assure li { display: flex; gap: 8px; align-items: center; }
+.assure .i { width: 18px; height: 18px; color: var(--accent); }
+
+.inside { background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 14px; min-width: 0; }
+.inside h2 { font-size: 1.05rem; font-family: var(--font-body); font-weight: 700; letter-spacing: 0; }
+.inside ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.inside li { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.inside li .ic { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); flex: none; }
+.inside li b { display: block; font-size: 15px; }
+.inside li span { color: var(--muted); font-size: 13.5px; }
+.inside .sum { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); text-align: center; }
+
+/* section scaffolding */
+section { scroll-margin-top: calc(72px + env(safe-area-inset-top, 0px)); }
+.block { padding-block: 64px; }
+.block-head { display: grid; gap: 10px; margin-bottom: 28px; max-width: 62ch; }
+.block-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); font-weight: 800; }
+.block-head p { color: var(--muted); }
+
+/* packages */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: 500 14px/1 var(--font-body); padding: 10px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.count { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.notice { display: flex; gap: 10px; align-items: flex-start; background: var(--sun-soft); color: var(--ink); border-radius: 12px; padding: 12px 14px; font-size: 14px; margin-bottom: 24px; }
+.notice .i { color: var(--sun); margin-top: 1px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 22px; }
+
+.pass { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+.pass-top { display: flex; justify-content: space-between; gap: 16px; padding: 22px 22px 20px; background: linear-gradient(180deg, var(--accent-soft), transparent 140%); }
+.route { font-family: var(--font-mono); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+.route .i { width: 16px; height: 16px; }
+.pass-top h3 { font-size: 2rem; font-weight: 800; margin-top: 8px; }
+.pass-top .meta { color: var(--muted); font-size: 14px; margin-top: 8px; }
+.pass-top .meta span { font-family: var(--font-mono); font-size: 12.5px; }
+.price { text-align: right; flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.price small { font-size: 12.5px; color: var(--muted); }
+.price strong { font-family: var(--font-display); font-weight: 800; font-size: 2.1rem; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1; }
+.badge { font-size: 12px; font-weight: 700; background: var(--sun-soft); color: var(--sun); padding: 4px 9px; border-radius: 999px; margin-bottom: 4px; }
+.perf { position: relative; height: 0; border-top: 2px dashed var(--line); margin-inline: 18px; }
+.perf::before, .perf::after { content: ""; position: absolute; top: -11px; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); }
+.perf::before { left: -29px; clip-path: inset(0 0 0 50%); }
+.perf::after { right: -29px; clip-path: inset(0 50% 0 0); }
+.parts { list-style: none; margin: 0; padding: 8px 22px 6px; display: grid; }
+.part { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 6px 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.part:last-child { border-bottom: 0; }
+.part .ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--surface-2); color: var(--accent); }
+.part b { display: block; font-size: 15px; line-height: 1.3; }
+.part .who { color: var(--muted); font-size: 13.5px; }
+.part .eur { font-family: var(--font-mono); font-weight: 700; font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
+.part a.go { grid-column: 2 / -1; justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 700; color: var(--accent); text-decoration: none; padding: 2px 0; }
+.part a.go:hover { text-decoration: underline; }
+.part a.go .i { width: 15px; height: 15px; }
+.pass-foot { margin-top: auto; padding: 14px 22px 18px; font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); background: var(--surface-2); }
+.empty { grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--muted); border: 1.5px dashed var(--line); border-radius: 16px; }
+
+
+.toolbar { align-items: flex-end; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field label { margin: 0; }
+select {
+  font: 500 15px/1.2 var(--font-body); color: var(--ink); background: var(--surface);
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 11px 38px 11px 14px; min-width: min(100%, 240px); max-width: 100%; cursor: pointer;
+}
+select:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.toolbar .count { margin-left: auto; }
+.dep { color: var(--ink); font-size: 14px; font-weight: 500; margin-top: 8px; }
+.more-row { display: flex; justify-content: center; margin-top: 26px; }
+
+/* how */
+.how { background: var(--surface); border-block: 1px solid var(--line); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; gap: 8px; align-content: start; }
+.steps li::before { content: counter(s); font-family: var(--font-mono); font-weight: 700; font-size: 14px; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); }
+.steps h3 { font-size: 1.25rem; font-weight: 700; margin-top: 6px; }
+.steps p { color: var(--muted); }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+
+/* trust */
+.trust { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.trust article { padding-top: 18px; border-top: 3px solid var(--accent); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.trust h3 { font-size: 1.2rem; font-weight: 700; }
+.trust p { color: var(--muted); }
+@media (max-width: 760px) { .trust { grid-template-columns: 1fr; } }
+
+/* reviews */
+.rev-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 32px; align-items: start; }
+.rev-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; min-width: 0; }
+.score { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.score strong { font-family: var(--font-display); font-weight: 800; font-size: 2.6rem; line-height: 1; }
+.score small { color: var(--muted); display: block; font-size: 13.5px; }
+.stars { display: inline-flex; gap: 2px; color: var(--sun); }
+.stars .i { fill: currentColor; stroke: none; width: 18px; height: 18px; }
+.stars .off { color: var(--line); }
+form { display: grid; gap: 14px; }
+label, .lab { font-weight: 700; font-size: 14px; display: block; margin-bottom: 6px; }
+input[type="text"], textarea {
+  width: 100%; font: 400 16px/1.4 var(--font-body); color: var(--ink); background: var(--bg);
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+textarea { min-height: 120px; resize: vertical; }
+input[type="text"]:focus, textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.rate { display: flex; gap: 4px; }
+.rate button { background: none; border: 0; padding: 4px; cursor: pointer; color: var(--line); border-radius: 8px; }
+.rate button .i { width: 30px; height: 30px; fill: currentColor; stroke: none; }
+.rate button.on { color: var(--sun); }
+.hint { font-size: 13px; color: var(--muted); }
+.status { font-size: 14px; min-height: 1.4em; }
+.status.err { color: var(--danger); }
+.list { display: grid; gap: 14px; }
+.review { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; display: grid; gap: 8px; min-width: 0; }
+.review header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.review .who { font-weight: 700; overflow-wrap: anywhere; }
+.review .when { font-size: 13px; color: var(--muted); }
+.review p { overflow-wrap: anywhere; white-space: pre-line; }
+.review .del { justify-self: start; background: none; border: 0; padding: 0; font: 500 13px var(--font-body); color: var(--muted); text-decoration: underline; cursor: pointer; }
+.list-empty { border: 1.5px dashed var(--line); border-radius: 16px; padding: 32px 24px; color: var(--muted); display: grid; gap: 6px; }
+.list-empty b { color: var(--ink); font-family: var(--font-display); font-size: 1.2rem; }
+@media (max-width: 860px) { .rev-layout { grid-template-columns: 1fr; } .hero .wrap { grid-template-columns: 1fr; gap: 32px; padding-block: 40px; } }
+
+footer.site { border-top: 1px solid var(--line); padding-block: 32px; color: var(--muted); font-size: 13.5px; }
+footer.site .wrap { display: grid; gap: 8px; }
+@media (max-width: 440px) { .pass-top { flex-direction: column; } .price { text-align: left; align-items: flex-start; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.part .eur small { display: block; font-weight: 500; color: var(--muted); font-size: 11px; font-family: var(--font-body); }
+.giscus-note { color: var(--muted); font-size: 14px; margin-bottom: 14px; max-width: 62ch; }
+.giscus-frame { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; min-width: 0; }
+.rev-off { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-logo" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13"/><path d="M21.5 10.5l-3.2 7.8-7.8 3.2 3.2-7.8z" fill="currentColor" stroke="none"/><circle cx="16" cy="16" r="1.4" fill="var(--surface)" stroke="none"/></symbol>
+  <symbol id="i-volo" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+  <symbol id="i-alloggio" viewBox="0 0 24 24"><path d="M3 19V5M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="1.8"/></symbol>
+  <symbol id="i-spostamenti" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/><circle cx="9" cy="14" r=".6"/><circle cx="15" cy="14" r=".6"/></symbol>
+  <symbol id="i-transfer" viewBox="0 0 24 24"><path d="M4.5 16l1.6-5.2A2 2 0 0 1 8 9.4h8a2 2 0 0 1 1.9 1.4L19.5 16M3 16h18v3H3z"/><circle cx="7.5" cy="19" r="1.2"/><circle cx="16.5" cy="19" r="1.2"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
+</svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bussola, inizio pagina"><svg class="i" aria-hidden="true"><use href="#i-logo"/></svg>Bussola</a>
+    <nav class="nav" aria-label="Sezioni">
+      <a href="#pacchetti">Pacchetti</a>
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#recensioni">Recensioni</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" id="weekLabel">Pacchetti della settimana</p>
+        <h1>Voli, alloggio e spostamenti già messi insieme.</h1>
+        <p class="lede">Ogni settimana Bussola sceglie le offerte più convenienti e le unisce in pacchetti pronti, con partenza dalle principali città italiane. Scegli la tua regione, confronti e prenoti direttamente sui siti ufficiali di compagnie e alloggi.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#pacchetti">Vedi i pacchetti <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#come-funziona">Come funziona</a>
+        </div>
+        <ul class="assure">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Nessun pagamento su Bussola</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Prenoti sui siti ufficiali</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Prezzo di ogni voce visibile</li>
+        </ul>
+      </div>
+      <aside class="inside" aria-label="Cosa contiene un pacchetto">
+        <h2>Cosa trovi in ogni pacchetto</h2>
+        <ul>
+          <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-volo"/></svg></span><div><b>Volo o treno, andata e ritorno</b><span>Link alla compagnia ufficiale</span></div></li>
+          <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-alloggio"/></svg></span><div><b>Alloggio</b><span>Link a Booking.com, Airbnb e simili</span></div></li>
+          <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-transfer"/></svg></span><div><b>Transfer dall'aeroporto</b><span>Metro, bus o navetta, quando serve</span></div></li>
+          <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-spostamenti"/></svg></span><div><b>Spostamenti in città</b><span>Abbonamenti e city card ufficiali</span></div></li>
+        </ul>
+        <p class="sum">4 voci = 1 pacchetto = 4 link ufficiali</p>
+      </aside>
+    </div>
+  </div>
+
+  <section id="pacchetti" class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="eyebrow">Selezione della settimana</p>
+        <h2>I pacchetti di questa settimana</h2>
+        <p>Scegli la regione da cui parti. Prezzi a persona, in camera doppia, ordinati dal più economico. Ogni voce rimanda al sito ufficiale dove completare la prenotazione.</p>
+      </div>
+      <div class="notice" id="notice" role="note" hidden>
+        <svg class="i" aria-hidden="true"><use href="#i-info"/></svg>
+        <p id="noticeText"></p>
+      </div>
+      <div class="toolbar">
+        <div class="field">
+          <label for="region">Regione di partenza</label>
+          <select id="region"><option value="">Tutta Italia</option></select>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filtra per prezzo e durata"></div>
+        <p class="count" id="count" aria-live="polite"></p>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="more-row"><button class="btn btn-ghost" id="more" type="button" hidden>Mostra altri pacchetti</button></div>
+    </div>
+  </section>
+
+  <section id="come-funziona" class="how block">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="eyebrow">Come funziona</p>
+        <h2>Tre passaggi, nessuna sorpresa</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Raccogliamo le offerte</h3><p>Controlliamo ogni giorno voli, treni, alloggi e trasporti locali e teniamo le opzioni più convenienti.</p></li>
+        <li><h3>Le uniamo in un pacchetto</h3><p>Combiniamo le offerte compatibili per date e orari, con il prezzo di ogni voce e il totale a persona.</p></li>
+        <li><h3>Prenoti tu, sul sito ufficiale</h3><p>Ogni voce ha il suo link. Paghi direttamente alla compagnia o alla struttura, senza passare da noi.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="trust-h">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="eyebrow">Perché fidarsi</p>
+        <h2 id="trust-h">Un sito che non vende nulla</h2>
+      </div>
+      <div class="trust">
+        <article><h3>Non incassiamo i tuoi soldi</h3><p>Bussola non vende viaggi e non ti chiede dati di pagamento. Il contratto è sempre tra te e la compagnia o la struttura.</p></article>
+        <article><h3>Ogni prezzo si controlla</h3><p>Vedi quanto costa ogni voce e da quale sito arriva. Se il prezzo cambia, lo vedi subito sul sito ufficiale.</p></article>
+        <article><h3>Libertà di comporre a modo tuo</h3><p>Puoi prenotare tutto il pacchetto oppure solo una parte, per esempio l'alloggio, e organizzare il resto come preferisci.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="recensioni" class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="block-head">
+        <p class="eyebrow">Recensioni</p>
+        <h2>Cosa dicono i viaggiatori di Bussola</h2>
+        <p>Le recensioni sono commenti scritti da chi ha usato il sito. Per scriverne una serve un account GitHub gratuito. Puoi modificare o eliminare la tua in qualsiasi momento.</p>
+      </div>
+      <div class="giscus-frame" id="giscusFrame">
+        <p class="rev-off" id="giscusOff" hidden>Le recensioni saranno disponibili a breve.</p>
+        <div class="giscus"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><b>Bussola</b> non vende viaggi e non intermedia pagamenti. Prenotazioni, prezzi e condizioni dipendono dai siti ufficiali collegati.</p>
+    <p>I nomi di compagnie, strutture e servizi citati appartengono ai rispettivi proprietari.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var eur = new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+  var dm = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "short" });
+  var dmy = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "long", year: "numeric" });
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function icon(name) {
+    var s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.setAttribute("class", "i"); s.setAttribute("aria-hidden", "true");
+    var u = document.createElementNS("http://www.w3.org/2000/svg", "use"); u.setAttribute("href", "#i-" + name);
+    s.appendChild(u); return s;
+  }
+  function day(iso) { var p = iso.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function span(depIso, retIso) {
+    var a = day(depIso), b = day(retIso);
+    var x = dm.format(a).split(" "), y = dm.format(b).split(" ");
+    return x[1] === y[1] ? x[0] + "–" + y[0] + " " + y[1] : dm.format(a) + " – " + dm.format(b);
+  }
+  function safeUrl(u) { return /^https:\/\//.test(u) ? u : "#"; }
+
+  var REGIONS = ["Abruzzo", "Basilicata", "Calabria", "Campania", "Emilia-Romagna", "Friuli-Venezia Giulia", "Lazio", "Liguria", "Lombardia", "Marche", "Molise", "Piemonte", "Puglia", "Sardegna", "Sicilia", "Toscana", "Trentino-Alto Adige", "Umbria", "Valle d'Aosta", "Veneto"];
+  var FILTERS = [
+    { id: "all", label: "Tutti", test: function () { return true; } },
+    { id: "250", label: "Fino a 250 €", test: function (p) { return p.total <= 250; } },
+    { id: "3n", label: "3 notti", test: function (p) { return p.nights === 3; } },
+    { id: "4n", label: "4 notti", test: function (p) { return p.nights === 4; } }
+  ];
+  var order = { volo: 0, alloggio: 1, transfer: 2, spostamenti: 3 };
+  var PACKS = [], meta = {}, current = "all", region = "", shown = 6, STEP = 6, cheapestId = null;
+
+  function card(p) {
+    var a = el("article", "pass");
+    var top = el("div", "pass-top");
+    var left = el("div");
+    var route = el("p", "route"); route.appendChild(el("span", null, p.from)); route.appendChild(icon("arrow")); route.appendChild(el("span", null, p.to));
+    left.appendChild(route);
+    left.appendChild(el("h3", null, p.city));
+    left.appendChild(el("p", "dep", "Partenza da " + p.depPlace + ", " + p.region));
+    var m = el("p", "meta"); m.appendChild(document.createTextNode(span(p.depart, p.ret) + " · " + p.nights + " notti · "));
+    m.appendChild(el("span", null, p.geo)); left.appendChild(m);
+    var price = el("div", "price");
+    if (p.id === cheapestId) price.appendChild(el("span", "badge", "Il più economico"));
+    price.appendChild(el("small", null, "Totale a persona"));
+    price.appendChild(el("strong", null, eur.format(p.total)));
+    top.appendChild(left); top.appendChild(price); a.appendChild(top);
+    a.appendChild(el("div", "perf"));
+    var ul = el("ul", "parts");
+    p.parts.slice().sort(function (x, y) { return order[x.k] - order[y.k]; }).forEach(function (x) {
+      var li = el("li", "part");
+      var ic = el("span", "ic"); ic.appendChild(icon(x.k === "volo" && x.train ? "spostamenti" : x.k)); li.appendChild(ic);
+      var d = el("div"); d.appendChild(el("b", null, x.t)); d.appendChild(el("span", "who", x.who)); li.appendChild(d);
+      var pr = el("span", "eur", (x.estimate ? "~" : "") + eur.format(x.eur));
+      if (x.estimate) pr.appendChild(el("small", null, "stima"));
+      li.appendChild(pr);
+      var go = el("a", "go"); go.href = safeUrl(x.url); go.target = "_blank"; go.rel = "noopener noreferrer";
+      go.appendChild(document.createTextNode(x.cta || ("Vai al sito di " + x.who))); go.appendChild(icon("ext")); li.appendChild(go);
+      ul.appendChild(li);
+    });
+    a.appendChild(ul);
+    var live = p.livePrice;
+    a.appendChild(el("p", "pass-foot", live
+      ? "Il prezzo del volo arriva da Aviasales, salvato negli ultimi giorni, e può essere cambiato. Le voci con ~ sono stime. Il prezzo finale si conferma sempre sul sito ufficiale."
+      : "Prezzi indicativi a persona. Il prezzo finale e la disponibilità si confermano sul sito ufficiale."));
+    return a;
+  }
+
+  function renderPacks() {
+    var f = FILTERS.filter(function (x) { return x.id === current; })[0];
+    var list = PACKS.filter(function (p) { return f.test(p) && (!region || p.region === region); });
+    cheapestId = list.length > 1 ? list[0].id : null;
+    var grid = document.getElementById("grid"); grid.textContent = "";
+    list.slice(0, shown).forEach(function (p) { grid.appendChild(card(p)); });
+    if (!list.length) {
+      grid.appendChild(el("p", "empty", region && !PACKS.some(function (p) { return p.region === region; })
+        ? "Per ora non ci sono pacchetti con partenza da " + region + ". Stiamo aggiungendo nuove città di partenza."
+        : "Nessun pacchetto corrisponde ai filtri scelti."));
+    }
+    var more = document.getElementById("more"); more.hidden = list.length <= shown;
+    more.textContent = "Mostra altri pacchetti (" + (list.length - shown) + ")";
+    document.getElementById("count").textContent = list.length + (list.length === 1 ? " pacchetto" : " pacchetti") + (region ? " da " + region : " da tutta Italia");
+  }
+
+  function setupFilters() {
+    var chips = document.getElementById("chips");
+    FILTERS.forEach(function (f) {
+      var b = el("button", "chip", f.label); b.type = "button"; b.setAttribute("aria-pressed", f.id === current ? "true" : "false");
+      b.addEventListener("click", function () {
+        current = f.id; shown = STEP;
+        Array.prototype.forEach.call(chips.children, function (c, i) { c.setAttribute("aria-pressed", FILTERS[i].id === current ? "true" : "false"); });
+        renderPacks();
+      });
+      chips.appendChild(b);
+    });
+    var sel = document.getElementById("region");
+    REGIONS.forEach(function (r) {
+      var n = PACKS.filter(function (p) { return p.region === r; }).length;
+      var o = el("option", null, r + (n ? " (" + n + ")" : "")); o.value = r; sel.appendChild(o);
+    });
+    sel.addEventListener("change", function () { region = sel.value; shown = STEP; renderPacks(); });
+    document.getElementById("more").addEventListener("click", function () { shown += STEP; renderPacks(); });
+  }
+
+  function showNotice() {
+    var n = document.getElementById("notice"), t = document.getElementById("noticeText");
+    n.hidden = false;
+    if (meta.demo) {
+      t.textContent = "";
+      t.appendChild(el("b", null, "Anteprima con dati dimostrativi. "));
+      t.appendChild(document.createTextNode("Città, date e prezzi qui sotto sono esempi: non sono ancora collegati a offerte reali. Prima di prenotare controlla sempre il prezzo sul sito ufficiale."));
+    } else {
+      var d = meta.generatedAt ? dmy.format(new Date(meta.generatedAt)) : "";
+      t.textContent = "";
+      t.appendChild(el("b", null, "Aggiornato il " + d + ". "));
+      t.appendChild(document.createTextNode("I prezzi dei voli arrivano da Aviasales e possono essere cambiati. Alloggio e spostamenti sono stime. Controlla sempre il prezzo finale sul sito ufficiale."));
+    }
+  }
+
+  function loadGiscus(cfg) {
+    var g = cfg && cfg.giscus;
+    if (!g || !g.repo || !g.repoId || !g.categoryId) { document.getElementById("giscusOff").hidden = false; return; }
+    var s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.async = true; s.crossOrigin = "anonymous";
+    var a = { "data-repo": g.repo, "data-repo-id": g.repoId, "data-category": g.category || "Recensioni", "data-category-id": g.categoryId,
+      "data-mapping": "specific", "data-term": "Recensioni di Bussola", "data-strict": "0", "data-reactions-enabled": "1",
+      "data-emit-metadata": "0", "data-input-position": "top", "data-theme": "preferred_color_scheme", "data-lang": "it" };
+    Object.keys(a).forEach(function (k) { s.setAttribute(k, a[k]); });
+    document.getElementById("giscusFrame").appendChild(s);
+  }
+
+  fetch("data/site.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(loadGiscus);
+
+  fetch("data/packages.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (data) {
+    meta = data; PACKS = (data.packages || []).slice().sort(function (a, b) { return a.total - b.total; });
+    if (data.weekStart && data.weekEnd) document.getElementById("weekLabel").textContent = "Settimana dal " + dm.format(day(data.weekStart)) + " al " + dm.format(day(data.weekEnd));
+    showNotice(); setupFilters(); renderPacks();
+  }).catch(function () {
+    document.getElementById("grid").appendChild(el("p", "empty", "Non riusciamo a caricare i pacchetti in questo momento. Riprova tra poco."));
+  });
+})();
+</script>
+</body>
+</html>
